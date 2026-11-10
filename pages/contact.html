@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Réservation - Dar Soltan Sousse</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Dar Soltan Sousse</h1>
+        <p>Restaurant et Saveurs Tunisiennes authentiques</p>
+
+        <figure>
+            <img src="image/restaurant.jpg" alt="Salle du restaurant Dar Soltan Sousse">
+            <figcaption>Contactez-nous ou réservez votre table.</figcaption>
+        </figure>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html#apropos">À propos</a></li>
+            <li><a href="index.html#produits">Nos produits</a></li>
+            <li><a href="index.html#services">Nos services</a></li>
+            <li><a href="carte.html">Notre carte</a></li>
+            <li><a href="commande.html">Commander</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>Contactez-nous / Réservation de table</h2>
+        
+        <form action="traitement-contact.php" method="post">
+            
+            <fieldset>
+                <legend>Vos coordonnées</legend>
+                
+                <p>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" minlength="2" required>
+                </p>
+                
+                <p>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" minlength="2" required>
+                </p>
+                
+                <p>
+                    <label for="email">Adresse électronique :</label>
+                    <input type="email" id="email" name="email" placeholder="vous@exemple.tn" required>
+                </p>
+                
+                <p>
+                    <label for="telephone">Téléphone :</label>
+                    <input type="tel" id="telephone" name="telephone" pattern="\+216[0-9]{8}" title="+216 suivi de 8 chiffres" placeholder="+21622550211" required>
+                </p>
+            </fieldset>
+
+            <fieldset>
+                <legend>Détails de la réservation</legend>
+                
+                <p>
+                    <label for="date-reservation">Date de réservation :</label>
+                    <input type="date" id="date-reservation" name="date_reservation" min="2026-06-01" required>
+                </p>
+
+                <p>
+                    <label for="heure-reservation">Heure :</label>
+                    <input type="time" id="heure-reservation" name="heure_reservation" min="11:00" max="23:00" required>
+                </p>
+
+                <p>
+                    <label for="nb-personnes">Nombre de personnes :</label>
+                    <input type="number" id="nb-personnes" name="nb_personnes" min="1" max="20" value="2" required>
+                </p>
+
+                <fieldset>
+                    <legend>Type de table</legend>
+                    <p>
+                        <input type="radio" id="table-interieur" name="zone" value="interieur" checked required>
+                        <label for="table-interieur">Salle intérieure traditionnelle</label>
+                    </p>
+                    <p>
+                        <input type="radio" id="table-terrasse" name="zone" value="terrasse">
+                        <label for="table-terrasse">Terrasse extérieure</label>
+                    </p>
+                </fieldset>
+
+                <p>
+                    <label for="message">Demandes particulières (max 200 car.) :</label>
+                    <textarea id="message" name="message" rows="4" cols="40" maxlength="200" placeholder="Chaise bébé, régime particulier..."></textarea>
+                </p>
+            </fieldset>
+
+            <p>
+                <button type="submit">Envoyer la réservation</button>
+                <button type="reset">Tout effacer</button>
+            </p>
+
+        </form>
+    </main>
+
+    <footer id="contact">
+        <h2>Contact</h2>
+        <div>
+            <h3>Coordonnées</h3>
+            <p>Avenue Habib Bourguiba, Sousse</p>
+            <p>Tél : +216 73 000 000</p>
+        </div>
+        <p>Suivez-nous :</p>
+        <ul>
+            <li><a href="mailto:contact@darsoltan.tn">Email</a></li>
+            <li><a href="https://www.facebook.com/darsoltan" target="_blank" rel="noopener">Facebook</a></li>
+            <li><a href="https://www.instagram.com/darsoltan" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+        <div>
+            <h3>Horaires</h3>
+            <p>Lundi – Dimanche : 11h – 23h</p>
+        </div>
+        <p>&copy; 2026 Dar Soltan Sousse. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
