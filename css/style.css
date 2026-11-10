@@ -1,0 +1,212 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  h1{color: red;}
+  :root {
+    --miel: #c8912a;       
+    --chocolat: #4a2c1a;    
+    --creme: #fff8ef;       
+    --pistache: #6b8e4e;     
+    --gris-texte: #3a3a3a;  
+    --espace: 1rem;        
+  }
+  
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    font-size: 1rem;
+    background-color: var(--creme);
+    color: var(--gris-texte);
+    display: grid;
+    grid-template-areas:
+      "entete"
+      "navigation"
+      "contenu"
+      "pied";
+    grid-template-rows: auto auto 1fr auto;
+    min-height: 100vh;
+    max-width: 1100px;
+    margin: 2 auto;
+  }
+  
+  header { grid-area: entete; }
+  nav    { grid-area: navigation; }
+  main   { grid-area: contenu; }
+  footer { grid-area: pied; }
+  
+  img, video {
+    max-width: 100%;
+    height: auto;
+  }
+  h2 {
+    color: var(--chocolat);
+    border-bottom: 2px solid var(--miel);
+  }
+  
+  strong {
+    color: var(--miel);
+  }
+  
+  p, li {
+    line-height: 1.6;
+  }
+  
+  a:link {
+    color: var(--miel);
+  }
+  a:visited {
+    color: var(--pistache);
+  }
+  a:hover {
+    color: var(--chocolat);
+    text-decoration: underline;
+  }
+  a:active {
+    color: var(--chocolat);
+  }
+  
+  nav ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: var(--espace);
+    list-style: none;
+    padding: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: var(--chocolat);
+    font-weight: bold;
+    display: block;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+  }
+  
+  nav a:hover {
+    background-color: var(--miel);
+    color: var(--creme);
+  }
+  
+  
+  
+  .grille-produits {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+  }
+  
+  .carte {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    padding: var(--espace);
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .carte .prix {
+    margin-top: auto;
+    font-weight: bold;
+    color: var(--miel);
+  }
+  
+  
+  .table-responsive {
+    overflow-x: auto;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+  
+  thead {
+    background-color: #faf3e8;
+    color: var(--chocolat);
+  }
+  
+  tbody tr td:last-child {
+    text-align: right;
+  }
+  
+  tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  caption {
+    caption-side: bottom;
+    font-style: italic;
+    padding-top: 8px;
+  }
+  
+  
+  
+  footer > div {
+    flex: 1;
+  }
+  
+  footer a {
+    color: var(--creme);
+  }
+  
+  
+  footer {
+      grid-area: pied;
+      display: block;
+      background-color: var(--chocolat);
+      color: var(--creme);
+      text-align: center;
+      padding: 50px 20px;
+      width: 100%;
+      margin-top: 40px;
+  }
+  #contact {
+      display: flex;
+      justify-content: space-around;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 30px;
+      max-width: 1200px;
+      margin: 0 auto;
+      background-color: transparent;
+      padding: 0;
+      text-align: left;
+  }
+  
+  #contact > div {
+      flex: 1;
+      min-width: 250px;
+  }
+  
+  .carte-info {
+      width: 100%;
+      max-width: 350px;
+      padding: 20px;
+      border: 2px solid var(--miel);
+      margin: 0 auto;
+      background-color: rgba(255, 255, 255, 0.05);
+  }
+  label{
+      color:var(--chocolat);
+
+  }
+  input{
+      border-color: #6b8e4e;
+  }
+  @media (min-width: 500px) {
+  .grille-produits { grid-template-columns: repeat(2, 1fr); }
+  footer { flex-direction: row; }
+  }
+  @media (min-width: 1024px) {
+  .grille-produits { grid-template-columns: repeat(3, 1fr); }
+  }
