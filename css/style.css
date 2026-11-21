@@ -198,6 +198,7 @@
   }
   label{
       color:var(--chocolat);
+  
 
   }
   input{
@@ -210,3 +211,20 @@
   @media (min-width: 1024px) {
   .grille-produits { grid-template-columns: repeat(3, 1fr); }
   }
+  .erreur {
+    color: red;
+    font-size: 13px;
+    display: block;
+    margin-top: 4px;
+}
+input.erreur-bordure, textarea.erreur-bordure {
+    border: 2px solid red;
+}
+#message-succes {
+    color: green;
+    font-weight: bold;
+}
+#compteur {
+    font-size: 12px;
+    color: #666;
+}
